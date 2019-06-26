@@ -1,0 +1,105 @@
+%\documentclass[11pt]{article}
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=80pt,bottom=60pt,left=48pt,right=46pt]{geometry}
+%Gummi|065|=)
+\title{\textbf{Goal Score Dataset}}
+\author{Swapnil Biswas (14.02.04.021)\\
+		Shahariar Shibli (14.02.04.027)\\
+		}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This dataset contains information that we have collected to predict whether a football player can score a goal or not in a match. The data were obtained from \href{https://www.whoscored.com/Statistics}{here}.The dataset is small in size with only 102 cases.
+
+\section{Data Set Description}
+The detailed description about the dataset is stated below.
+
+\begin{enumerate}
+
+    \item\textbf{Title}: Goal Score Data Set.
+    
+    \item\textbf{Usage}: This dataset is used in lab project for assessment.
+    
+    \item\textbf{Number of instances}: 102
+    
+    \item\textbf{Relevant Information}:
+    \begin{enumerate}
+    \item Dataset contains 2 classes which are represented by 0 and 1. 0 indicates the player didn't score any goal and 1 indicates that the player scored in a particular match. 
+    
+    \item Class 0 contains 58 instances and class 1 contains 44 instances.
+    
+    \item The information of players and teams we have collected to create the dataset is based on the season 2017/2018.
+    \end{enumerate}
+    
+    
+    \item\textbf{Number of attributes}: Total 9 attributes. 1 object type and 8 numeric, including predictive attributes and the class.
+    
+    
+    \item\textbf{Attribute information}:
+    \begin{enumerate}
+    \item\textbf{Name(object type)}: Name of the player.
+    \item\textbf{Player's Current Rating}: Describes the performance factor of the player in the particular match. Ranges between 0 to 10.
+    \item\textbf{Age}: Age of the player.
+    \item\textbf{Recent Form (No. of Goals)}: Number of goals the player scored.
+    \item\textbf{Position}: Describes in which position the player plays.Positions are classified into three types that are represented by 1,2 and 3.
+    \begin{enumerate}
+        \item Forward represented by 1
+        \item Midfield represented by 2
+        \item Defense represented by 3
+    \end{enumerate}
+    \item\textbf{Opponent Team's Rating}: Describes the performance rating of the opponent team in scale of 1 to 10.
+    \item\textbf{Own Team's Rating}: Describes the performance rating of the player's team in scale of 1 to 10..
+    \item\textbf{Venue}: Describes where the match took place. Venue is classified into two types and represented by 1 and 2.
+    \begin{enumerate}
+        \item Home represented by 1
+        \item Away represented by 2
+    \end{enumerate}
+    \item\textbf{Target(predict)}:
+    \begin{enumerate}
+        \item 0 means the player didn't score any goal.
+        \item 1 means the player scored at least 1 goal.
+    \end{enumerate}
+    \end{enumerate}
+    \item\textbf{Missing attribute values}: None.
+\end{enumerate}
+
+\section{Attribute Correlation}
+\begin{table}[htp]
+\centering
+\caption{Correlation between attributes}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+                                                                        & \begin{tabular}[c]{@{}l@{}}Players \\ Current \\ Rating\end{tabular} & Age       & \begin{tabular}[c]{@{}l@{}}Recent Form \\ ( No. of Goals )\end{tabular} & Position  & \begin{tabular}[c]{@{}l@{}}Opponent \\ Team's \\ Rating\end{tabular} & \begin{tabular}[c]{@{}l@{}}Own \\ Team's \\ Rating\end{tabular} & Venue     & Target    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Players \\ Current \\ Rating\end{tabular}    & 1.000000                                                             & -0.022335 & 0.206547                                                                & -0.156921 & -0.068704                                                            & 0.093705                                                        & 0.024040  & 0.684175  \\ \hline
+Age                                                                     & -0.022335                                                            & 1.000000  & -0.066879                                                               & -0.049754 & 0.003933                                                             & 0.162185                                                        & 0.027604  & -0.046492 \\ \hline
+\begin{tabular}[c]{@{}l@{}}Recent Form \\ ( No. of Goals )\end{tabular} & 0.206547                                                             & -0.066879 & 1.000000                                                                & -0.670338 & 0.014279                                                             & 0.161060                                                        & -0.010021 & 0.184101  \\ \hline
+Position                                                                & -0.156921                                                            & -0.049754 & -0.670338                                                               & 1.000000  & -0.044438                                                            & -0.001718                                                       & -0.015509 & -0.103509 \\ \hline
+\begin{tabular}[c]{@{}l@{}}Opponent \\ Team's \\ Rating\end{tabular}    & -0.068704                                                            & 0.003933  & 0.014279                                                                & -0.044438 & 1.000000                                                             & -0.004469                                                       & -0.011725 & -0.133720 \\ \hline
+\begin{tabular}[c]{@{}l@{}}Own \\ Team's \\ Rating\end{tabular}         & 0.093705                                                             & 0.162185  & 0.161060                                                                & -0.001718 & -0.004469                                                            & 1.000000                                                        & 0.022812  & 0.090394  \\ \hline
+Venue                                                                   & 0.024040                                                             & 0.027604  & -0.010021                                                               & -0.015509 & -0.011725                                                            & 0.022812                                                        & 1.000000  & 0.039185  \\ \hline
+Target                                                                  & 0.684175                                                             & -0.046492 & 0.184101                                                                & -0.103509 & -0.133720                                                            & 0.090394                                                        & 0.039185  & 1.000000  \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Class Distribution}
+\begin{itemize}
+      \item 56.86\% data from class 0
+    \item 43.14\% data from class 1
+\end{itemize}
+
+\section{Sources}
+    \begin{enumerate}
+    \item Data Collection Source: \href{https://www.whoscored.com/Statistics}{whoscored} 
+    \item Date: February, 2018
+    \end{enumerate}
+    
+\end{document}
