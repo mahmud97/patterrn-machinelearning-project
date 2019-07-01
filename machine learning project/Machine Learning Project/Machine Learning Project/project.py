@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 13 22:04:36 2018
-@author: shibli
 """
 
 #removing sklearn wornings
